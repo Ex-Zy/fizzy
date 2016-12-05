@@ -476,6 +476,7 @@ a {
 
 .btn-cart {
   display: inline-block;
+  vertical-align: top;
   width: 67px;
   height: 51px;
   margin-right: -28px;
@@ -677,9 +678,9 @@ h2,
 
 .select {
   position: relative;
-  top: 8px;
   line-height: 1;
   display: inline-block;
+  vertical-align: top;
   margin-right: 22px;
   width: 61px;
   text-align: left;
