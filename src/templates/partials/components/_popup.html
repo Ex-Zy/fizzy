@@ -1,0 +1,39 @@
+{% import "partials/_mixins.html" as mixins %}
+<!-- BEGIN popup -->
+<div class="popup js-popup">
+	<div class="popup__inner">
+		<div class="popup__top">
+			<a href="#" class="btn-close js-close">
+				<span class="btn-close__text">
+					{{mixins.icon('arrow')}}
+					Carello
+				</span>
+			</a>
+		</div>
+		<div class="order">
+			{%- import "data/data-order.html" as list -%}
+			{%- for unit in list.items -%}
+				<!-- BEGIN order__item -->
+				<div class="order__item">
+					<div class="order__media">
+						<img src="{{unit.picture}}" alt="">
+					</div>
+					<div class="order__content">
+						<div class="order__title">{{unit.title}}</div>
+						<div class="order__meta">{{unit.meta}}</div>
+						<div class="order__price">{{unit.price}}</div>
+					</div>
+				</div>
+				<!-- END order__item -->
+			{%- endfor -%}
+		</div>
+		<div class="total">
+			Subtotale <br>
+			<span>€455.00</span>
+		</div>
+		<div class="popup__bottom">
+			<a href="#" class="btn">VISUALIZZA CARRELLO</a>
+		</div>
+	</div>
+</div>
+<!-- END popup -->

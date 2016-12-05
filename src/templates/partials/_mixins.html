@@ -1,0 +1,35 @@
+{% macro icon(i) %}
+<svg class="icon icon-{{i}}"><use xlink:href="img/sprite.svg#icon-{{i}}"></use></svg>
+{% endmacro %}
+
+{# item #}
+{% macro item(config) %}
+<div class="item">
+	<h2 class="title-h2">{{config.mainTitle}}</h2>
+	<div class="item__media">
+		<img src="img/items/{{config.img}}" alt="Fizzy Slim">
+	</div>
+	<div class="item__footer">
+		<div class="item__title">{{config.title}}</div>
+		<div class="item__price">
+			<div class="item__current">{{config.current}}</div>
+			<div class="item__old">{{config.old}}</div>
+		</div>
+		<div class="item__bottom">
+			<div class="select js-select">
+				<span class="select__value js-select-value">3</span>
+				<div class="select__content js-select-content">
+					<ul class="select__list js-scrollbar">
+						{% for i in range(1, 51) -%} 
+							<li class="select__item"><a href="#" class="select__link js-select-link">{{i}}</a></li>
+						{%- endfor %}
+					</ul>
+				</div>
+			</div>
+			<button type="button" class="btn-cart js-cart">
+				{{icon('cart')}}
+			</button>
+		</div>
+	</div>
+</div>
+{% endmacro %}

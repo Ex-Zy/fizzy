@@ -1,0 +1,118 @@
+html,
+body,
+.out
+	min-height: 100% 
+body
+	min-width: 320px
+	background: url(../img/bg.jpg) no-repeat center
+	background-size: cover
+	+bebas
+	color: #fff
+	line-height: 1.2
+	font-size: 24px
+	text-transform: uppercase
+	&.is-hidden
+		overflow: hidden
+
+a
+	text-decoration: none		
+
+.overlay
+	position: fixed
+	z-index: 100
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	opacity: 0
+	visibility: hidden
+	background: rgba(#000, 0.77)
+	transition: opacity 0.25s ease, visibility 0.25s ease
+	&.is-active
+		opacity: 1
+		visibility: visible
+
+
+%inner
+	position: relative
+	padding: 0 15px
+	margin: 0 auto
+	max-width: 1170px
+	+clr
+	+sm
+		padding: 0 16px
+
+.inner
+	@extend %inner
+
+//icons
+.icon
+	display: inline-block
+	vertical-align: top
+	transition: opacity 0.25s ease, fill 0.25s ease, color 0.25s ease
+.icon-arrow
+	fill: #fff
+	font-size: 32px
+	line-height: 1
+.icon-cart
+	fill: #fff
+	font-size: 24px
+	line-height: 1
+
+//buttons
+.btn
+	display: inline-block
+	text-align: center
+	line-height: 1
+	padding: 22px 55px 
+	background-color: #faa21b
+	border-radius: 5px
+	color: #fff
+	letter-spacing: -0.01em
+	+bold
+	font-size: 18px
+	+trans(background-color, 0.25s, ease)
+	&:hover
+		background-color: #323232
+.btn-close
+	display: block
+	height: 100%
+	+vertical
+	&__text
+		display: inline-block
+		vertical-align: middle
+		position: relative
+		padding-left: 100px
+		margin-left: -100px
+		color: #fff
+		+bebas
+		font-size: 60px
+		line-height: 1
+	.icon-arrow
+		position: absolute
+		top: 50%
+		margin-top: -16px
+		left: 0
+.btn-cart
+	display: inline-block
+	width: 67px
+	height: 51px
+	margin-right: -28px
+	border: 3px solid white
+	border-radius: 23px
+	background: transparent
+	transition: background 0.2s ease-in-out, border-color 0.2s ease-in-out
+	&:hover
+		background: #ff8b24 
+		border-color: #ff8b24 
+//title
+h1,
+.title-h1
+	color: white
+	+evogria
+	font-size: 48px
+
+h2,
+.title-h2
+	font-size: 36px
+	font-weight: normal

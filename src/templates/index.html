@@ -1,0 +1,43 @@
+---
+title: Index page
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<!-- BEGIN inner -->
+	<div class="inner">
+		<!-- BEGIN items-wrp -->
+		<div class="items-wrp">
+			<h1 class="title-h1">CASSA</h1>
+			<!-- BEGIN container -->
+			<div class="container">
+				<!-- BEGIN row -->
+				<div class="row">
+					{%- import "data/data.html" as list -%}
+					{%- for unit in list.items -%}
+						<!-- BEGIN col -->
+						<div class="col-xs-3">
+							<!-- BEGIN item -->
+							{{mixins.item({
+								mainTitle: unit.mainTitle,
+								img: unit.images,
+								title: unit.title,
+								current: unit.current,
+								old: unit.old
+							})}}	
+							<!-- END item -->
+						</div>
+						<!-- END col -->
+					{%- endfor -%}
+				</div>
+				<!-- END row -->
+			</div>
+			<!-- END container -->
+			<div class="line"></div>	
+		</div>
+		<!-- END items-wrp -->
+	</div>
+	<!-- END inner -->
+{% endblock %}
+
+
